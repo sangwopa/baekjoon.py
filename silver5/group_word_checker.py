@@ -6,16 +6,19 @@ for i in range(N):
 
 def check_word(wrd):
     for i in range(len(wrd)-1):
+        flag = 0
         for n in range(i+1, len(wrd)):
-            if wrd[i] == wrd[n]:
-                flag = 0
-            elif (flag == 1) and (wrd[i] == wrd[n]):
-                flag = 2
-            else:
+            if flag==1 and wrd[i]==wrd[n]:
+                return False
+            elif wrd[i] != wrd[n]:
                 flag = 1
-    if flag == 2:
-        return False
-    else:
-        return True
+            else:
+                flag = 0
+    return True
 
+cnt = 0
+for i in range(N):
+    if check_word(grp[i]) == True:
+        cnt += 1
 
+print(cnt)
