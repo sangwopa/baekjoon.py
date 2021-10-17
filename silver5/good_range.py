@@ -5,7 +5,7 @@ n = int(input()) # 데이터 받아오기
 div.sort() # 리스트 오름차순 정렬
 cnt  = 0 # 카운트
 
-# 구간에서 순서를 고려하여 2개의 숫자 뽑기
+# 구간에서 순서를 고려하지 않고 2개의 숫자 뽑기
 def permutation(a, b):
     con = []
     temp = []

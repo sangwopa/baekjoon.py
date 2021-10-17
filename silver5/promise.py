@@ -13,10 +13,11 @@ for i in range(N):
     if abs(S[i]-A[i]) > max:
         max = abs(S[i]-A[i])
 
-time = 0
-min = 10**9
+
+min = 10**13
 res = [] 
 for i in range(-max, max+1):
+    time = 0
     for n in range(N):
         time += abs(S[n]-A[n]+i)
     if time < min:
