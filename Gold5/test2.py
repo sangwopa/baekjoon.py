@@ -1,7 +1,7 @@
 import sys
 
 V, E = map(int,sys.stdin.readline().split())
-K = str(sys.stdin.readline())
+K = str(sys.stdin.readline()).strip()
 
 graph = {}
 
@@ -10,8 +10,8 @@ for i in range(V):
     
 for i in range(E):
     div = list(map(int,sys.stdin.readline().split()))
-    graph[str(div[0])][str(div[1])] = div[2]
-    
+    graph[str(div[0]).strip()][str(div[1]).strip()] = div[2]
+
 import heapq
 
 def dijkstra(graph, first):
@@ -39,7 +39,7 @@ def dijkstra(graph, first):
 con = dijkstra(graph, K)
 
 for i in range(len(con)):
-    if con[str(i+1)] == 'inf':
+    if con[str(i+1)] == float('inf'):
         print('INF')
     else:
         print(con[str(i+1)])
