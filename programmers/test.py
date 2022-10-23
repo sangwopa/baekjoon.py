@@ -1,5 +1,4 @@
-tmp = "1 2 3 4"
+arr = [1,1,3,3,0,1,1]
 
-con = tmp.split(' ')
-
-print(con)
+for i in arr:
+    print([i])
