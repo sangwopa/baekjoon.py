@@ -1,4 +1,4 @@
-arr = [1,1,3,3,0,1,1]
+s = " "
 
-for i in arr:
-    print([i])
+for i in s:
+    print(i[0].upper() + i[1:].lower())
