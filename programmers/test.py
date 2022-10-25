@@ -1,4 +1,1 @@
-s = " "
-
-for i in s:
-    print(i[0].upper() + i[1:].lower())
+print(type(bin(int("1111", 2))[2:]))
