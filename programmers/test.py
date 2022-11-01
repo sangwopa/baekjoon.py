@@ -1,14 +1,16 @@
-def solution(grid):
-    global n, m, answer, directions
-    answer = []
-    n, m = len(grid), len(grid[0])
-    
-    #4방향 방문 기록 리스트: y*x*4
-    visited = [[[False] * 4 for _ in range(n)] for _ in range(m)]
-    
-    print(visited)
-    
-    
-grid = ["SL","LR"]
-print(solution(grid))
-    
+from itertools import combinations
+
+tmp = [1,2,3,4]
+
+permute = combinations(tmp, 2)
+
+tmp = list(permute)
+
+print(tmp)
+
+lst = []
+
+# for i in lst:
+#     if 
+
+case_list = [[1,2,3,4], [1,3,2,4], [1,4,2,3]]
