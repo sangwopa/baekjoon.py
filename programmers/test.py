@@ -1,16 +1,15 @@
-from itertools import combinations
+from collections import deque
 
-tmp = [1,2,3,4]
+alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-permute = combinations(tmp, 2)
+print(len(alpha))
 
-tmp = list(permute)
+alpha = deque(alpha)
 
-print(tmp)
+print(alpha)
 
-lst = []
+alpha.append("KA")
 
-# for i in lst:
-#     if 
+print(alpha)
 
-case_list = [[1,2,3,4], [1,3,2,4], [1,4,2,3]]
+
