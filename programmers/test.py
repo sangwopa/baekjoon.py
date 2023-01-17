@@ -1,15 +1,12 @@
-from collections import deque
+from heapq import heappush, heappop, heapify
 
-alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+scoville = [1, 2, 3, 9, 10, 12]
 
-print(len(alpha))
+heapify(scoville)
 
-alpha = deque(alpha)
+tmp = heappop(scoville) + (heappop(scoville) * 2)
 
-print(alpha)
 
-alpha.append("KA")
 
-print(alpha)
 
 
