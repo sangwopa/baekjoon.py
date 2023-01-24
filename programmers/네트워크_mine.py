@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-#스택
 def iterative_dfs(start_v, graph):
     discovered = []
     stack = [start_v]
@@ -12,8 +11,6 @@ def iterative_dfs(start_v, graph):
                 stack.append(w) 
     return discovered
 
-tmp = [[1, 1, 0], [1, 1, 0], [0, 0, 1]]
-
 def make_graph(lst):
     graph = dict()
 
@@ -24,8 +21,21 @@ def make_graph(lst):
                 graph[i].append(n)    
     
     return graph
+    
+def solution(n, computers):
+    answer = 0
+    discovered = []
+    idx = 0
+    graph = make_graph(computers)
+    while 1:
+        tmp_iter = iterative_dfs(idx, graph)
+        discovered.extend(tmp_iter)
+        answer += 1
+        if len(discovered) == n:
+            break
+        idx = min([i for i in range(n) if not i in discovered])
+        
+    return answer
 
-   
-print(make_graph(tmp))
-
-print(iterative_dfs(2, make_graph(tmp)))
+# print(solution(3, [[1, 1, 0], [1, 1, 0], [0, 0, 1]]))
+print(solution(3, [[1, 1, 0], [1, 1, 1], [0, 1, 1]]))
