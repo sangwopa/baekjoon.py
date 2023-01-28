@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 def iterative_dfs(start_v, graph):
     discovered = []
     stack = [start_v]
@@ -37,5 +35,5 @@ def solution(n, computers):
         
     return answer
 
-# print(solution(3, [[1, 1, 0], [1, 1, 0], [0, 0, 1]]))
+print(solution(3, [[1, 1, 0], [1, 1, 0], [0, 0, 1]]))
 print(solution(3, [[1, 1, 0], [1, 1, 1], [0, 1, 1]]))
