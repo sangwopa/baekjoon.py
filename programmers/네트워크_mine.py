@@ -1,3 +1,4 @@
+#그래프 순회 결과
 def iterative_dfs(start_v, graph):
     discovered = []
     stack = [start_v]
@@ -9,6 +10,7 @@ def iterative_dfs(start_v, graph):
                 stack.append(w) 
     return discovered
 
+#리스트 그래프 변환
 def make_graph(lst):
     graph = dict()
 

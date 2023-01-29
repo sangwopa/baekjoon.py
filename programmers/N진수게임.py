@@ -1,3 +1,4 @@
+#진수변환
 def base_conv_expn(n, q):
     num = '0123456789ABCDEF'
     rev_base = ''
