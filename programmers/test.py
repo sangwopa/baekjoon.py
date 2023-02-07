@@ -1,17 +1,19 @@
-import heapq
+import time
 
-works =  [4, 3, 3]
-n = 4
+def return_abc():
+  alphabets = []
+  for ch in "ABC":
+    time.sleep(1)
+    alphabets.append(ch)
+  return alphabets
 
-works = [-w for w in works]
-print(works)
-heapq.heapify(works)
-print(works)
-
-while n > 0:
-    max_val = heapq.heappop(works)
-    heapq.heappush(works, max_val+1)
-    n -= 1
+for ch in return_abc():
+  print(ch)
+  
+def yield_abc():
+    for ch in "ABC":
+        time.sleep(1)
+        yield ch
     
-print(max_val)
-
+for ch in yield_abc():
+  print(ch)

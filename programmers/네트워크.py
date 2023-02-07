@@ -21,13 +21,7 @@ def solution(k, computers):
         for n in range(len(computers[i])):
             if i != n and computers[i][n] == 1:
                 graph[i].append(n)
-  
-    
-    
-    
-    
-    
-    
+
     return answer
 
 print(solution(3, [[1, 1, 0], [1, 1, 0], [0, 0, 1]]))
