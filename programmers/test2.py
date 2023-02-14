@@ -1,8 +1,3 @@
-tmp = []
+tmp = "img12.png"
 
-tmp.extend([[1,1], [2,2], [1,1]])
-
-
-print(tmp)
-
-print(set(tmp))
+print(tmp.lower())
