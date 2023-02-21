@@ -1,27 +1,26 @@
-tmp = "img12.png"
+maps = ["SOOOL","XXXXO","OOOOO","OXXXX","OOOOE"]
 
-def split_file_name(fileNm):
-    con = []
-    stts = 0
-    str1, str2, str3 = '', '', ''
-    for i in range(len(fileNm)):
-        if stts == 0:
-            if fileNm[i].isdigit():
-                stts = 1
-                str2 += fileNm[i]
-            else:
-                str1 += fileNm[i]
-        elif stts == 1:
-            if not fileNm[i].isdigit():
-                str3 = fileNm[i:]
-                con.extend([str1, str2, str3])
-                break
-            else:
-                str2 += fileNm[i]
+start = []
+lever = []
+exit = []
+
+for i in range(len(maps)):
+    for n in range(len(maps[i])):
+        if maps[i][n] == 'X' or maps[i][n] == 'O':
+            continue
+        elif maps[i][n] == 'S':
+            start = [i, n]
+        elif maps[i][n] == 'L':
+            lever = [i, n]
+        elif maps[i][n] == 'E':
+            exit = [i, n]
     
-    if str3 == '':
-        con.extend([str1, str2, str3])
-                
-    return con
+    if start != [] and lever != [] and exit != []:
+        break
+            
 
-print(split_file_name("F-15"))
+
+print("start: ", start)
+print("lever: ", lever)
+print("exit: ", exit)
+
