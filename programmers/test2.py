@@ -11,33 +11,47 @@ dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
 def find_way(maps, start, end):
-    distance = 0
+    distance = deque([0])
     queue = deque([])
     queue.append(start)
-    visited = []
+    visited = {
+        0: [start]
+    }
     
-    while queue:
-        now = queue.popleft()
-        for i in range(4):
-            nx = now[0] + dx[i]
-            ny = now[1] + dy[i]      
-            
-            if nx == -1 or nx == col_len or ny == -1 or ny == row_len:
-                continue    
-            
-            if maps[nx][ny] == 'X':
-                continue
-            
-            if nx == end[0] and nx == end[1]:
-                distance += 1
+    col_len = len(maps[0])
+    row_len = len(maps)
+
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]   
+    
+    while 1:
+        stts = 0
+        for i in range(len(queue)):
+            if queue[i][0] == end[0] and queue[i][1] == end[1]:
+                stts += 1
+                continue            
+            cnt = 0
+            for n in range(4):
+                nx = queue[i][0] + dx[n]
+                ny = queue[i][1] + dy[n]   
+                
+                if nx == -1 or nx == col_len or ny == -1 or ny == row_len or  maps[nx][ny] == 'X':
+                    continue 
+                
+                if (maps[nx][ny] in ('O', 'L', 'E')) and not [nx, ny] in visited[i]:
+                    if cnt >= 1:
+                        queue.append([nx, ny])
+                        distance.append(distance[i])
+                        visited[i+1] = visited[i]
+                    else:
+                        queue[i] = [nx, ny]
+                    cnt += 1
+                    distance[i] += 1
+                    visited[i].append([nx, ny])
+        else:
+            if stts == len(queue):
                 break
-            
-            if maps[nx][ny] == 'O' and not [nx, ny] in visited:
                 
-                queue.append([nx, ny])
-                visited.append([nx, ny])
-                distance += 1
-                
-    return distance
+    return min(distance)
 
 print(find_way(maps, start, end))
