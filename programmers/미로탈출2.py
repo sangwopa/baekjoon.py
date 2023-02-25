@@ -41,6 +41,9 @@ def find_way(maps, start, end):
         
         if cnt > (col_len*row_len):
             return -1
+    
+    return -1
+
 def solution(maps):
     answer = 0
 
