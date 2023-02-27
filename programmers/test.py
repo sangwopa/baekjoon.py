@@ -1,31 +1,27 @@
 from collections import deque
 
-maze = [[1,0,1,1,1],[1,0,1,0,1],[1,0,1,1,1],[1,1,1,0,1],[0,0,0,0,1]]
+answer = 0
 
-x, y = 0, 0
+lst = [[-20,-15], [-14,-5], [-18,-13], [-5,-3]]
+lst.sort(key=lambda x: (x[0]))
 
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
+lst = deque(lst)
 
-queue = deque()
-queue.append((x, y))
+print(lst)
 
-while queue:
-    x, y = queue.popleft()
+queue = deque([])
 
-    for i in range(4):
-        nx, ny = x + dx[i], y + dy[i]
+queue.append(lst.popleft())
 
-        if nx < 0 or ny < 0 or nx >= len(maze) or ny >= len(maze[0]):
-            continue
+print(queue)
 
-        if maze[nx][ny] == 0:
-            continue
-
-        if maze[nx][ny] == 1:
-            maze[nx][ny] = maze[x][y] + 1
-
-            queue.append((nx, ny))
-
-
-print(maze)
+while len(lst) != 0:
+    if lst[0][0] <= queue[0][1]:
+        queue.append(lst.popleft())
+    else:
+        queue.appendleft(lst.popleft())
+        answer += 1
+        
+print(answer)
+        
+        

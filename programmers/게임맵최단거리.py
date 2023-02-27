@@ -1,8 +1,7 @@
 from collections import deque
 
+#모든 맵을 돌며 그 지점에 갈수 있는 최단 거리 업데이트
 def solution(maps):
-    answer = 0
-    
     queue = deque()
     queue.append((0, 0))
     
