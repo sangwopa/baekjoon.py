@@ -1,6 +1,7 @@
-a = [5,1,3,7]
-b = [2,2,6,8]
+from collections import deque
 
-a.sort()
+a = [9, 1, 5, 3, 6, 2]
+
+queue = deque(a)
 
 print(a)
