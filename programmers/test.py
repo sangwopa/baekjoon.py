@@ -1,7 +1,8 @@
 from collections import deque
 
-a = [9, 1, 5, 3, 6, 2]
+m = 8
+n = 4
+section = [2, 3, 6]
+section=deque(section)
 
-queue = deque(a)
-
-print(a)
+print(section)

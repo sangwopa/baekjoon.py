@@ -1,6 +1,6 @@
 from collections import deque
 
-# BFS 그래프 순회 방식으로 무인도 거주 일 수 return
+# BFS 그래프 순회 방식으로 무인도 거주 일수 return
 def rounding_island(visited, maps, start):
     term = int(maps[start[0]][start[1]])
     queue = deque()
