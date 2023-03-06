@@ -1,8 +1,9 @@
 from collections import deque
 
-m = 8
-n = 4
-section = [2, 3, 6]
-section=deque(section)
+tmp = deque([])
+tmp.append(3)
+tmp.extend([1,2,3])
 
-print(section)
+print(tmp)
+print(1 in tmp)
+print(all([i > 1 for i in tmp]))
