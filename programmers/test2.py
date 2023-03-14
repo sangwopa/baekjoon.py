@@ -1,3 +1,7 @@
-tmp = [1,2,3,4]
+from itertools import product
 
-print(tmp[::-1])
+print(list(product(range(2), repeat=3)))
+
+for i in range(3, -1, -1):
+    print(i)
+     
