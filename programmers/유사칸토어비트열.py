@@ -1,3 +1,4 @@
+# 시간초과
 def get_cantor(n):
     cantor = ['1']
     
@@ -12,17 +13,10 @@ def get_cantor(n):
         cantor = tmp.copy()      
     
     return ''.join(cantor)
-    
-print(get_cantor(0))
-print(get_cantor(1))
-print(get_cantor(2))
-print(get_cantor(3))
-print(get_cantor(4))
-        
 
-    
-    
-        
+def solution(n, l, r):
+    tmp = get_cantor(n)
 
-        
-    
+    return tmp[l-1:r].count('1')
+
+print(solution(2, 4, 17))

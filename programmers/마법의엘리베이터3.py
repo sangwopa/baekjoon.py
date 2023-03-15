@@ -19,14 +19,11 @@ def solution(storey):
         answer.append(tmp)
 
     return min(answer) 
-    
-    
-    
-
 
 print(solution(16)) # 6
 print(solution(2554)) # 16
 print(solution(3)) # 3
 print(solution(3194)) # 10
+print(solution(9000)) # 2
     
     
