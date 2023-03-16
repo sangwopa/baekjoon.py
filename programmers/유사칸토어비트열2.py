@@ -1,12 +1,15 @@
 def solution(n, l, r):
-    if n == 0:
-        '1'[l-1:r].count('1')
+    rng = 5**n
+    splt_lst = []
+    for i in range(5):
+        if 
+
     
     
     
     
     
 
-    return '1'[l-1:r].count('1')
+
 
 print(solution(2, 4, 17)) # 8
